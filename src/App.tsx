@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import TicketList from "./components/ticket-list";
+import Board from "./components/board";
+import axios from "axios";
 
 export default App;
+
+function App() {
+    // let todosArray, usersArray;
+
+    // const [todosArray, setTodosArray] = useState();
+    const [usersArray, setUsersArray] = useState();
+
+
+
+    const getInfo = async () => {
+        const todos = await axios.get('https://jsonplaceholder.typicode.com/todos');
+
+        const users = await axios.get('https://jsonplaceholder.typicode.com/users');
+
+        setUsersArray(() => users.data);
+    }
+
+
+    getInfo().then();
+
+    return (
+        <div className="App">
+            <TicketList/>
+            <Board/>
+        </div>
+    );
+}

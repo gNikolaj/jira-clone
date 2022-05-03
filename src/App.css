@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@500&display=swap');
+
+body {
+    font-family: 'Akshar', sans-serif;
+}
+h2 {
+    font-size: 30px;
+    padding-left: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3 {
+    font-size: 22px;
+    text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+canvas {
+    border-radius: 50%;
+    margin: auto 10px;
+    height: 50px;
+    width: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ticket-list {
+    margin: 0 auto;
+    width: 1300px;
+    height: 500px;
 }
 
-.App-link {
-  color: #61dafb;
+.ticket-box {
+    border: 1px solid grey;
+    border-radius: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ticket {
+    display: flex;
+    margin: 15px auto ;
+    border: 1px solid grey;
+    border-radius: 1em;
+    width: 90%;
+    height: 80px;
+}
+
+.ticket canvas{
+    background-color: #F9ED69;
+}
+
+.ticket:nth-child(4n + 1) canvas{
+    background-color: #F08A5D;
+}
+
+.ticket:nth-child(4n + 2) canvas{
+    background-color: #B83B5E;
+}
+
+.ticket:nth-child(4n + 3) canvas{
+    background-color: #6A2C70;
+}
+
+.ticket-text {
+    margin-top: 5px;
+    width: 85%;
+    overflow: hidden;
+}
+
+.ticket-state {
+    margin: auto 15px;
+}
+
+.board {
+    margin: 0 auto;
+    width: 1300px;
+    height: 500px;
+}
+
+.board-box {
+    border: 1px solid grey;
+    border-radius: 1em;
+    display: flex;
+}
+
+.board-column {
+    margin: 10px auto;
+    width: 30%;
+    height: 300px;
+}
+
+.verticalLine {
+    border-left: 1px solid rgba(0, 0, 0, 0.4);
+    height: 280px;
+    margin: auto;
 }

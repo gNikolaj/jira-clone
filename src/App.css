@@ -1,4 +1,25 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Akshar:wght@500&display=swap');
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: none;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
 
 body {
     font-family: 'Akshar', sans-serif;
@@ -13,13 +34,6 @@ h3 {
     text-align: center;
 }
 
-canvas {
-    border-radius: 50%;
-    margin: auto 10px;
-    height: 50px;
-    width: 50px;
-}
-
 .ticket-list {
     margin: 0 auto;
     width: 1300px;
@@ -29,9 +43,14 @@ canvas {
 .ticket-box {
     border: 1px solid grey;
     border-radius: 1em;
+    overflow: auto;
+    height: 400px;
 }
 
 .ticket {
+    overflow-wrap: break-word;
+    overflow-y: hidden;
+    text-align: center;
     display: flex;
     margin: 15px auto ;
     border: 1px solid grey;
@@ -40,30 +59,44 @@ canvas {
     height: 80px;
 }
 
-.ticket canvas{
+.ticket .circle{
     background-color: #F9ED69;
 }
 
-.ticket:nth-child(4n + 1) canvas{
+.ticket:nth-child(4n + 1) .circle{
     background-color: #F08A5D;
 }
 
-.ticket:nth-child(4n + 2) canvas{
+.ticket:nth-child(4n + 2) .circle{
     background-color: #B83B5E;
 }
 
-.ticket:nth-child(4n + 3) canvas{
+.ticket:nth-child(4n + 3) .circle{
     background-color: #6A2C70;
 }
 
 .ticket-text {
     margin-top: 5px;
     width: 85%;
-    overflow: hidden;
 }
 
 .ticket-state {
     margin: auto 15px;
+}
+
+.circle {
+    font-size: 30px;
+    border-radius: 50%;
+    margin: auto 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.circle p {
+    color: white;
+    position: relative;
+    bottom: 50%;
 }
 
 .board {
@@ -82,6 +115,14 @@ canvas {
     margin: 10px auto;
     width: 30%;
     height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.board-column-box {
+    position: relative;
+    height: 200px;
+    overflow: auto;
 }
 
 .verticalLine {

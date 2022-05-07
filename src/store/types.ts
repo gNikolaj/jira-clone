@@ -1,7 +1,7 @@
 export enum userTypes {
-    SET_USERS = 'users/setUsers'
+  SET_USERS = "users/setUsers",
 }
 
 export enum todosTypes {
-    SET_TODOS = 'todos/setTodos'
+  SET_TODOS = "todos/setTodos",
 }

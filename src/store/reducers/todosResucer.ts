@@ -1,15 +1,15 @@
-import {todosTypes} from "../types";
+import { todosTypes } from "../types";
 
-const initialState = {todos: []};
+const initialState = { todos: [] };
 
 const todosReducer = (state = initialState, action: any) => {
-    switch (action.type) {
-        case todosTypes.SET_TODOS: {
-            return {...state, ...action.payload}
-        }
-        default:
-            return state;
+  switch (action.type) {
+    case todosTypes.SET_TODOS: {
+      return { ...state, ...action.payload };
     }
-}
+    default:
+      return state;
+  }
+};
 
 export default todosReducer;

@@ -1,15 +1,10 @@
 import React from 'react';
 import Ticket from "./ticket";
+import {useSelector} from "react-redux";
 
-interface TicketsListProps {
-    ticketsList: any;
-    usersList: any;
-}
+const TicketList = () => {
 
-const TicketList = ({ticketsList, usersList}: TicketsListProps) => {
-
-    console.log(ticketsList);
-    console.log(usersList);
+    const ticketsList = useSelector((state:any) => state.todos.todos);
 
     return (
         <div className='ticket-list'>
@@ -17,7 +12,7 @@ const TicketList = ({ticketsList, usersList}: TicketsListProps) => {
             <div className='ticket-box'>
                 {
                     ticketsList.map((item:any, index:number) => (
-                        <Ticket name={'AA'} text={item.title} status={item.completed} key={index}/>
+                        <Ticket ticketInfo={item} hideStatus={false} key={index}/>
                     ))
                 }
             </div>
